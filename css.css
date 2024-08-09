@@ -1,0 +1,320 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+    overflow-x: clip;
+}
+
+.content {
+    position: relative;
+}
+
+.inner-div {
+    flex: 1;
+    /* Makes inner-div grow to fill available space */
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffffba;
+    /*color: white;*/
+    text-align: center;
+    transition: position 0.3s ease;
+    justify-content: center;
+    padding: 20px;
+    font-size: 19px;
+    border-color: var(--navbar-border-color);
+    border-top-width: 0px;
+    border-bottom-width: 1px;
+    border-left: 0px;
+    border-style: solid;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.navbar ul li a {
+    color: black;
+    text-decoration: none;
+    margin: 15px;
+}
+
+.navbar.fixed {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    height: 2vh;
+}
+
+#landing {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+}
+
+.subject {
+    display: flex;
+    justify-content: center;
+    margin: 0 15vw 0 10vw;
+}
+
+.subject h1 {
+    font-size: 5vw;
+    margin-bottom: -8vh;
+}
+
+.subject h3 {
+    font-size: 3vw;
+    color:#114f84;
+}
+
+.subject p {
+    margin-bottom: 7vh;
+    font-size: 1.4vw;
+}
+
+#banner-img {
+    position: absolute;
+    transform: translateX(-40vw);
+}
+
+#banner-text {
+    margin-left: 35%;
+    font-size: 3vw;
+}
+
+#banner-text p {
+    line-height: 8vh;
+}
+
+.highlight {
+    color:#114f84;
+    font-size: 5vw;
+    font-weight: 700;
+}
+
+.btn {
+    border-radius: 100px;
+    background-color: white;
+    padding: 24px 34px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 3vh;
+    cursor: pointer;
+    color: black;
+    border: 0;
+}
+
+img {
+    overflow: hidden;
+}
+
+.left {
+    margin: 0 10vw 0 10vw;
+    color: white;
+}
+
+/* styles.css */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hidden {
+    opacity: 0;
+    /* Texto invisível inicialmente */
+}
+
+.show {
+    animation: fadeInUp 1s forwards;
+    /* Animação de entrada */
+}
+
+.imagens {
+display: flex;
+flex-direction: column;
+margin-left: 2vw;
+margin-right: 2vw;
+align-self: center;
+}
+
+.imagens img {
+    width: 400px;
+    height: 380px;
+border-radius: 50%;
+}
+
+
+.display-mobile {
+    display: none;
+}
+
+.hide-mobile {
+    display: flex;
+}
+
+
+
+@media (max-width: 1200px) {
+    #landing {
+        flex-direction: column;
+    }
+
+    #banner-img {
+        position: initial;
+        transform: none;
+        display: flex;
+        justify-content: center;
+    }
+
+    #banner-img img {
+        width: 70%;
+    }
+
+    #banner-text {
+        margin-left: 0;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+    }
+
+
+    #navbar {
+        display: none;
+    }
+
+    .subject {
+        flex-direction: column;
+        margin: 0 10vh 0 10vh;
+    }
+
+    .subject p {
+        font-size: 2.4vw;
+    }
+
+    .subject h1 {
+        margin-bottom: 0;
+    }
+
+    .display-mobile {
+        display: flex;
+    }
+
+    .hide-mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    #landing {
+        flex-direction: column;
+    }
+
+    #banner-img {
+        position: initial;
+        transform: none;
+        display: flex;
+        justify-content: center;
+    }
+
+    #banner-img img {
+        width: 70%;
+    }
+
+    #banner-text {
+        margin-left: 0;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        font-size: 7vw;
+    }
+
+    .highlight {
+        font-size: 11vw;
+    }
+
+    #banner-text p {
+        line-height: 9vh;
+    }
+
+    #navbar {
+        display: none;
+    }
+
+    .subject {
+        flex-direction: column;
+        margin: 0 10vh 0 10vh;
+    }
+
+    .subject p {
+        font-size: 2.6vw;
+    }
+
+    .subject h1 {
+        font-size: 7vw;
+    }
+
+    .subject h3 {
+        font-size: 5vw;
+    }
+}
+
+
+@media (max-width: 530px) {
+    .subject p {
+        font-size: 3.6vw;
+    }
+
+    .imagens {
+        display: none;
+    }
+}
+
+/*estilo o fundo gradiente*/
+.skewed-background {
+    position: relative; /* necessário para posicionar o pseudo-elemento */
+    background-color: transparent; /* cor de fundo transparente */
+    padding: 20px; /* espaçamento interno */
+  }
+  
+  .skewed-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #9cda5a, #044eaa);
+    transform: skewY(-2deg); /* inclinação vertical */
+    z-index: -1; /* posiciona atrás do texto */
+  }
